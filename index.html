@@ -6,17 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="/images/logitech-gaming-2.svg" type="image/x-icon">
 </head>
 
 <body>
     <header>
         <nav>
             <ul class="items">
-                <li class="item-1">
-                    <img src="/images/Logitech_logo.svg" alt="Logitech-logo-image" width="100">
-                    <img src="/images/logitech-gaming-2.svg" alt="logitech-gaming-logo-image" width="40">
-                </li>
+                <a href="/index.html">
+                    <li class="item-1">
+                        <img src="/images/Logitech_logo.svg" alt="Logitech-logo-image" width="100">
+                        <img src="/images/logitech-gaming-2.svg" alt="logitech-gaming-logo-image" width="40">
+                    </li>
+                </a>
                 <li class="item-2">
+                    <p>COMPRAR</p>
+                    <P>DESCUBRIR</P>
+                    <p>SOFTWARE</p>
+                    <p>ASISTENCIA</p>
+                </li>
+                <li class="item-3">
                     <input type="text" placeholder="Buscar...">
                     <button>
                         <img src="/images/busqueda.svg" alt="Search-imge">
@@ -37,15 +46,25 @@
             </div>
         </section>
         <section class="section-2">
-            <img src="/images/pro-x-superlight-black-gallery-1.webp" alt="Product-image" width="500">
+            <div class="image-container">
+                <img src="/images/pro-x-superlight-black-gallery-1.webp" alt="Product-image" class="image black-image">
+                <img src="/images/pro-x-superlight-white-gallery-1.webp" alt="Product-image" class="image white-image">
+                <img src="/images/bazooka-magenta-gallery-1.webp" alt="Product-image" class="image magenta-image">
+            </div>
             <div class="product-colors">
-                <div class="product-color black"></div>
-                <div class="product-color white"></div>
-                <div class="product-color magenta"></div>
+                <input type="radio" id="color-black" name="color" checked>
+                <label for="color-black" class="product-color black"></label>
+
+                <input type="radio" id="color-white" name="color">
+                <label for="color-white" class="product-color white"></label>
+
+                <input type="radio" id="color-magenta" name="color">
+                <label for="color-magenta" class="product-color magenta"></label>
             </div>
         </section>
+
         <section class="section-3">
-            <h2>DESCRIPCION</h2>
+            <h2>DESCRIPCIÓN</h2>
             <p>Menos de 63 gramos. Tecnología inalámbrica LIGHTSPEED avanzada con latencia baja. Precisión por debajo
                 del micrón con sensor HERO 25K. Elimina todos los obstáculos con nuestro mouse inalámbrico PRO más
                 ligero y rápido.</p>
@@ -165,22 +184,35 @@
         </section>
     </main>
     <footer>
-        <p>© 2024 By <strong>Daniel Olivares</strong> ... All rights reserved</p>
+        <p>© 2024 Por <strong>Daniel Olivares</strong> ...  Reservados todos los derechos</p>
+        <div class="subscription">
+            <p>Suscribete si quieres recibir correos electrónicos sobre productos, noticias y más de Logitech G.</p>
+            <a href="/screens/contact.html"><button>S U S C R I B E T E !</button></a>
+        </div>
         <ul class="redes">
             <a href="https://www.instagram.com/dxnieel___" target="_blank">
                 <li class="red">
-                    <img src="images/instagram-1.png" alt="instagram">
+                    <img src="/images/instagram.png" alt="instagram">
                     <p>@dxnieel___</p>
                 </li>
             </a>
             <a href="https://www.linkedin.com/in/daniel-andres-olivares-rodelo-664a862b7/" target="_blank">
                 <li class="red">
-                    <img src="images/linkedin-1.png" alt="linkedin">
+                    <img src="/images/linkedin.png" alt="linkedin">
                     <p>Daniel Andres Olivares Rodelo</p>
                 </li>
             </a>
         </ul>
     </footer>
+    <script>
+        document.querySelectorAll('.product-colors input').forEach(input => {
+            input.addEventListener('change', function () {
+                const color = this.id.split('-')[1];
+                document.querySelectorAll('.image-container .image').forEach(img => {
+                    img.style.display = img.classList.contains(`${color}-image`) ? 'block' : 'none';
+                });
+            });
+        });
+    </script>
 </body>
-
 </html>

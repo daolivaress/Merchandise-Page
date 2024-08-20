@@ -20,7 +20,7 @@ body {
 
 header {
     grid-area: header;
-    border: 1px solid black;
+    background-color: #131313;
     padding: 1rem;
     display: flex;
     justify-content: center;
@@ -43,24 +43,47 @@ ul {
     list-style-type: none;
 }
 
+.item-1:hover {
+    cursor: pointer;
+}
+
 .item-2 {
+    display: flex;
+    gap: 50px;
+    font-weight: bold;
+    align-items: center;
+}
+
+.item-2 p {
+    transition: 100ms;
+}
+
+.item-2 p:hover {
+    cursor: pointer;
+    background-color: #fff;
+    color: #000;
+    padding: 8px 16px;
+    border-radius: 100px;
+}
+
+.item-3 {
     position: relative;
 }
 
-.item-2 input {
-    padding: 8px;
+.item-3 input {
+    padding: 8px 12px;
     border-radius: 100px;
     border: none;
     background-color: #2e2e2e;
 }
 
-.item-2 input::placeholder {
+.item-3 input::placeholder {
     color: #fff;
     font-family: "Verdana", Geneva, Tahoma, sans-serif;
     font-weight: 100;
 }
 
-.item-2 button {
+.item-3 button {
     position: absolute;
     background: none;
     border: none;
@@ -70,7 +93,7 @@ ul {
     top: 7px;
 }
 
-.item-2 button img {
+.item-3 button img {
     width: 16px;
 }
 
@@ -88,6 +111,7 @@ main {
         "section1 section1 section1"
         "section2 section3 section3"
         "section2 section4 section5";
+    margin: 50px 0;
 }
 
 .section-1 {
@@ -96,7 +120,7 @@ main {
 }
 
 .product-name {
-    margin-left: 532px;
+    margin-left: 582px;
 }
 
 .product-name p {
@@ -105,6 +129,8 @@ main {
     padding: 5px 7px;
     width: fit-content;
     margin-bottom: 10px;
+    font-size: 11px;
+    font-weight: bold;
 }
 
 .product-name h1 {
@@ -120,6 +146,24 @@ main {
 .section-2 {
     grid-area: section2;
     padding: 1rem;
+}
+
+
+.image-container .image {
+    width: 550px;
+    display: none;
+}
+
+.image-container .black-image {
+    display: block;
+}
+
+
+.product-colors input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
 .product-colors {
@@ -193,7 +237,7 @@ details ul {
 
 .recommended-product-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 170px);
+    grid-template-columns: repeat(auto-fit, 170px);
     gap: 10px;
 }
 
@@ -256,12 +300,45 @@ a {
 
 footer {
     grid-area: footer;
+    display: flex;
     border: 1px solid black;
     background-color: #fff;
     color: #000;
     padding: 5rem;
     text-align: center;
     box-shadow: 0px -10px 1px 0px rgba(0,0,0,0.12);
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    color: #323232;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.subscription button{
+    margin-top: 12px;
+    background-color: #000;
+    width: 200px;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.subscription button:hover {
+    animation: pulse 1s infinite;
 }
 
 .redes {
@@ -274,7 +351,7 @@ footer {
 
 .redes li {
     margin: 0 10px;
-    color: #000;
+    color: #323232;
 }
 
 .redes li>img {
@@ -284,3 +361,4 @@ footer {
 .redes li>img, .redes li>p {
     vertical-align: middle;
 }
+

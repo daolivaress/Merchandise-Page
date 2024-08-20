@@ -201,6 +201,10 @@ main {
     padding: 1rem;
 }
 
+.section-3 p {
+    margin-right: 200px;
+}
+
 .section-4 {
     grid-area: section4;
     padding: 3rem 1rem;

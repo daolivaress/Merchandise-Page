@@ -63,8 +63,6 @@ The page is divided into the following sections:
 
 This webpage is designed to be a simple and effective way to showcase Logitech products. You can modify the HTML and CSS files to customize the content, add more sections, or improve the design according to your needs.
 
-3. **Add Images**:
-   - Place your product images in the `/images` directory and update the `src` attributes in the HTML.
 
 ## Contact
 
